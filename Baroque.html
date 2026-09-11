@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Baroque</title>
+
+    <style>
+        .marque {
+            background-color: rgb(45, 43, 43);
+        }
+
+        .slider {
+            width: 100%;
+            height: 40px;
+            margin: 0px;
+            margin-right: 50px;
+            line-height: 40px;
+            text-align: center;
+            color: white;
+            letter-spacing: 2px;
+            font-family: Cabin, sans-serif;
+            font-size: 13px;
+            font-weight: bold;
+            overflow-wrap: anywhere;
+
+        }
+
+        .aslider {
+            text-decoration: none;
+            font-size: 13px;
+            color: white;
+        }
+
+        .header {
+            width: 100%;
+            height: 73px;
+            background-color: white;
+            text-align: center;
+            font-size: medium;
+        }
+
+        .hero {
+            position: relative;
+            min-width: 100%;
+            max-height: 100%;
+            min-height: 100%;
+            overflow-wrap: anywhere;
+            object-fit: cover;
+            object-position: center;
+            border-radius: inherit;
+        }
+
+        .hero img {
+            position: relative;
+            display: block;
+        }
+
+        .look {
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            font-size: xx-large;
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            /* Do images ke beech ka gap */
+
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .btn {
+            position: relative;
+            padding: 15px 40px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #000;
+            background-color: #fff;
+            border: 1px solid #000;
+            cursor: pointer;
+            overflow: hidden;
+            transition: color 0.4s ease;
+            z-index: 1;
+            font-family: Arial, sans-serif;
+        }
+
+        .btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: -1;
+        }
+
+        .btn:hover {
+            color: #fff;
+        }
+
+        .btn:hover::before {
+            left: 0;
+        }
+
+        .nlook {
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 10px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .contaner {
+            display: flex;
+            gap: 30px;
+            margin-top: 0%;
+            padding: 40px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .con-item {
+            position: relative;
+            flex: 1;
+            overflow: hidden;
+
+        }
+
+        .con-item-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .buttons {
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translate(-50px);
+        }
+
+        .btns {
+            position: relative;
+            padding: 10px 30px;
+            font-size: 20px;
+            font-family: sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background-color: rgb(255, 255, 255);
+            color: black;
+            border: 1px solid #000;
+            cursor: pointer;
+            overflow: hidden;
+            transition: color 0.4s ease;
+            z-index: 1;
+        }
+
+        .btns::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            /* Shuru mein left mein chhupa hua */
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: -1;
+        }
+
+        .btns:hover {
+            color: white;
+        }
+
+        .btns:hover::before {
+            left: 0;
+            /* Hover par andar aa jayega */
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 500px;
+            background-color: rgba(47, 47, 47);
+           
+        }
+.first{
+
+}
+
+        .h6 {
+            color: white;
+            font-size: 20px;
+            padding-left: 45px;
+        }
+
+        .footer-ul {
+            list-style: none;
+        
+        }
+
+        .footer-a {
+            color: gray;
+            text-decoration: none;
+            line-height: 40px;
+        }
+         .footer-a:hover{
+            color: white;
+            transition: 0.5s;
+         }
+        
+
+ .h7 {
+            color: white;
+            font-size: 20px;
+            padding-left: 45px;
+        }
+
+        .sfooter-ul {
+            list-style: none;
+        
+        }
+
+        .sfooter-a {
+            color: gray;
+            text-decoration: none;
+            line-height: 40px;
+        }
+         .sfooter-a:hover{
+            color: white;
+            transition: 0.5s;
+         }
+
+         
+ .h8 {
+            color: white;
+            font-size: 20px;
+            padding-left: 45px;
+        }
+
+        .tfooter-ul {
+            list-style: none;
+            padding-right: 10px;
+        
+        }
+
+        .tfooter-a {
+            color: gray;
+            text-decoration: none;
+            line-height: 40px;
+        }
+         .tfooter-a:hover{
+            color: white;
+            transition: 0.5s;
+         }
+
+    </style>
+</head>
+
+<body>
+    <marquee class="marque" scrollamount="7">
+        <span class="slider">
+            Last Date To Order Stitched Articles & Receive Before Eid is 3rd May, 2026
+        </span>
+        <span class="slider"></span>
+
+        <span class="slider"> <a class="aslider" href="https://baroque.pk" title="https://baroque.com.pk"> FOR
+                INTERNATIONAL WEBSITE VISIT WWW.BAROQUE.COM.PK</a></span>
+
+        <span class="slider"> <a href="tel:111302302" class="aslider"> Call us at: UAN 111-302-302</a></span>
+
+        <span class="slider">
+            Last Date To Order Stitched Articles & Receive Before Eid is 3rd May, 2026
+        </span>
+        <span class="slider"></span>
+
+        <span class="slider"> <a class="aslider" href="https://baroque.pk" title="https://baroque.com.pk"> FOR
+                INTERNATIONAL WEBSITE VISIT WWW.BAROQUE.COM.PK</a></span>
+
+        <span class="slider"> <a href="tel:111302302" class="aslider"> Call us at: UAN 111-302-302</a></span>
+    </marquee>
+
+    <div class="header">
+        <h1>BAROQUE</h1>
+    </div>
+
+    <div class="hero">
+        <img width="100%" src="pic/1.webp">
+        <div class="look">
+            <h4>OWN YOUR NEW LOOK</h4>
+            <div class="button">
+                <button class="btn">UNSTITICH</button>
+                <button class="btn">STITICH</button>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="nlook">OWN YOUR NEW LOOK</h1>
+    </div>
+    <div class="contaner">
+        <div class="con-item">
+            <img width="100%" src="pic/2.webp" alt="">
+            <div class="buttons">
+                <button class="btns">UNSTITICH</button>
+            </div>
+        </div>
+        <div class="con-item">
+            <img width="100%" src="pic/3.webp" alt="">
+            <div class="buttons">
+                <button class="btns">UNSTITICH</button>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h1 class="nlook">OWN YOUR NEW LOOK</h1>
+    </div>
+
+    <div class="hero">
+        <img width="100%" src="pic/1.webp">
+        <div class="look">
+            <h4>OWN YOUR NEW LOOK</h4>
+            <div class="button">
+                <button class="btn">UNSTITICH</button>
+                <button class="btn">STITICH</button>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="nlook">OWN YOUR NEW LOOK</h1>
+    </div>
+    <div class="contaner">
+        <div class="con-item">
+            <img width="100%" src="pic/2.webp" alt="">
+            <div class="buttons">
+                <button class="btns">UNSTITICH</button>
+            </div>
+        </div>
+        <div class="con-item">
+            <img width="100%" src="pic/3.webp" alt="">
+            <div class="buttons">
+                <button class="btns">UNSTITICH</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero">
+        <img width="100%" src="pic/1.webp">
+        <div class="look">
+            <h4>OWN YOUR NEW LOOK</h4>
+            <div class="button">
+                <button class="btn">UNSTITICH</button>
+                <button class="btn">STITICH</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+      <div class="first">
+           <p class="h6">ABOUT</p>
+        <ul class="footer-ul">
+            <li>
+                <a href="" class="footer-a">Who We Are</a>
+            </li>
+            <li>
+                <a href="" class="footer-a">Our Responsibility</a>
+            </li>
+            <li>
+                <a href="" class="footer-a">Service We Provide
+                </a>
+            </li>
+            <li>
+                <a href="" class="footer-a">Careers
+                </a>
+            </li>
+            <li>
+                <a href="" class="footer-a">Our Shop: First Floor, Dolmen Mall,<br>
+                    Shop No F-06, A Block DHA Phase 6,<br>
+                    Lahore
+                </a>
+            </li>
+        </ul>
+       
+      </div>
+      <div class="second">
+   <p class="h7">Customer Service</p>
+        <ul class="sfooter-ul">
+            <li>
+                <a href="" class="sfooter-a">Contact Us</a>
+            </li>
+            <li>
+                <a href="" class="sfooter-a">Dispatch Timeline</a>
+            </li>
+            <li>
+                <a href="" class="sfooter-a">Exchange Information
+                </a>
+            </li>
+            <li>
+                <a href="" class="sfooter-a">Email: info@baroque.pk
+                </a>
+            </li>
+            <li>
+                <a href="" class="sfooter-a">UAN 111-302-302
+                </a>
+            </li>
+             <li>
+                <a href="" class="sfooter-a">WhatsApp: +92 325 7001111
+                </a>
+            </li>
+        </ul>
+       
+      </div>
+      <div class="third">
+<p class="h8">Policies</p>
+        <ul class="tfooter-ul">
+            <li>
+                <a href="" class="tfooter-a">Privacy Policy</a>
+            </li>
+            <li>
+                <a href="" class="tfooter-a">Refund Policy</a>
+            </li>
+            <li>
+                <a href="" class="tfooter-a">Shipping Policy
+                </a>
+            </li>
+            <li>
+                <a href="" class="tfooter-a">Terms of Service
+
+                </a>
+            </li>
+            <li>
+                <a href="" class="tfooter-a">Legal
+                </a>
+            </li>
+        </ul>
+       
+      </div>
+    </div>
+    
+
+
+</body>

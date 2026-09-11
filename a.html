@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Images Flex Layout</title>
+    <style>
+        /* Flexbox Layout */
+        .hero-container {
+            display: flex;
+            gap: 10px; /* Do images ke beech ka gap */
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Har image ka wrapper */
+        .hero-item {
+            position: relative;
+            flex: 1; /* Dono images barabar jagah lengi */
+            overflow: hidden;
+        }
+
+        .hero-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Button placement image ke upar */
+        .button-overlay {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* --- Sliding Button Logic --- */
+        .btn {
+            position: relative;
+            padding: 10px 30px;
+            font-size: 14px;
+            font-family: sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background-color: white;
+            color: black;
+            border: 1px solid #000;
+            cursor: pointer;
+            overflow: hidden;
+            transition: color 0.4s ease;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%; /* Shuru mein left mein chhupa hua */
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: -1;
+        }
+
+        .btn:hover {
+            color: white;
+        }
+
+        .btn:hover::before {
+            left: 0; /* Hover par andar aa jayega */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero-container">
+        <div class="hero-item">
+            <img src="https://baroque.pk/cdn/shop/files/90_ca595430-d31c-4357-bd8f-b47f9e1f189d.jpg?v=1776950790&width=1000" alt="Look 1">
+            <div class="button-overlay">
+                <button class="btn">UNSTITCH</button>
+            </div>
+        </div>
+
+        <div class="hero-item">
+            <img src="https://baroque.pk/cdn/shop/files/90_ca595430-d31c-4357-bd8f-b47f9e1f189d.jpg?v=1776950790&width=1000p" alt="Look 2">
+            <div class="button-overlay">
+                <button class="btn">STITCH</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
